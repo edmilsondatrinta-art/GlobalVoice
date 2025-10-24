@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GlobalVoice — Chamadas Globais de Áudio e Vídeo</title>
+  <meta name="description" content="GlobalVoice — Plataforma mundial para chamadas e videochamadas grátis (5 min) e pagas. Paga via PayPal. Suporte a todos os códigos de país." />
+  <meta name="keywords" content="chamadas, videochamada, voz, VoIP, chamadas internacionais, PayPal, GlobalVoice" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- AdSense placeholder: substitui pelo teu código AdSense quando tiveres -->
+  <!-- <script data-ad-client="ca-pub-XXXXXXXXXXXX" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <h1>GlobalVoice</h1>
+        <small>Conectando o mundo através da voz</small>
+      </div>
+      <div class="lang">🌐 
+        <select id="langSelect" aria-label="Idioma">
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="fr">FR</option>
+        </select>
+      </div>
+    </header>
+
+    <section class="card preview">
+      <div class="media">
+        <video id="localVideo" autoplay muted playsinline></video>
+        <video id="remoteVideo" autoplay playsinline></video>
+      </div>
+
+      <div class="controls">
+        <div class="row">
+          <label for="countrySearch">País / Código</label>
+          <input id="countrySearch" placeholder="Procura: Angola, Brasil ou +244" />
+          <select id="countrySelect" aria-label="Selecionar país"></select>
+        </div>
+
+        <div class="row">
+          <label for="phoneInput">Número</label>
+          <input id="phoneInput" placeholder="Insere o número (sem espaços)" />
+        </div>
+
+        <div class="row buttons">
+          <button id="startPreview" class="btn primary">Iniciar Pré-visualização</button>
+          <button id="startCall" class="btn success">Iniciar Chamada (Áudio / Vídeo)</button>
+        </div>
+
+        <div class="row info">
+          <div id="freeTimer">5:00 grátis</div>
+          <div id="status">Pronto</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card plans">
+      <h2>Planos</h2>
+      <div class="plan-grid">
+        <!-- Mini -->
+        <div class="plan">
+          <h3>Mini</h3><p>$5 / 50 min</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="edmilsondatrinta@gmail.com">
+            <input type="hidden" name="item_name" value="GlobalVoice - Mini 50min">
+            <input type="hidden" name="amount" value="5.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <button class="btn pay">Comprar via PayPal</button>
+          </form>
+        </div>
+
+        <!-- Normal -->
+        <div class="plan">
+          <h3>Normal</h3><p>$10 / 100 min</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="edmilsondatrinta@gmail.com">
+            <input type="hidden" name="item_name" value="GlobalVoice - Normal 100min">
+            <input type="hidden" name="amount" value="10.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <button class="btn pay">Comprar via PayPal</button>
+          </form>
+        </div>
+
+        <!-- Ultra -->
+        <div class="plan">
+          <h3>Ultra</h3><p>$15 / 3 dias ilimitado</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="edmilsondatrinta@gmail.com">
+            <input type="hidden" name="item_name" value="GlobalVoice - Ultra 3 dias">
+            <input type="hidden" name="amount" value="15.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <button class="btn pay">Comprar via PayPal</button>
+          </form>
+        </div>
+
+        <!-- Semanal -->
+        <div class="plan">
+          <h3>Semanal</h3><p>$20 / 7 dias</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="edmilsondatrinta@gmail.com">
+            <input type="hidden" name="item_name" value="GlobalVoice - Semanal">
+            <input type="hidden" name="amount" value="20.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <button class="btn pay">Comprar via PayPal</button>
+          </form>
+        </div>
+
+        <!-- Mensal (popular) -->
+        <div class="plan popular">
+          <h3>Mensal</h3><p>$25 / 30 dias</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="edmilsondatrinta@gmail.com">
+            <input type="hidden" name="item_name" value="GlobalVoice - Mensal">
+            <input type="hidden" name="amount" value="25.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <button class="btn pay">Comprar via PayPal</button>
+          </form>
+        </div>
+
+        <!-- Anual -->
+        <div class="plan">
+          <h3>Anual</h3><p>$50 / 365 dias</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="edmilsondatrinta@gmail.com">
+            <input type="hidden" name="item_name" value="GlobalVoice - Anual">
+            <input type="hidden" name="amount" value="50.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <button class="btn pay">Comprar via PayPal</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="card footer">
+      <p>© 2025 GlobalVoice — Conectando o mundo através da voz.</p>
+      <p><a href="#">Termos de Uso</a> • <a href="#">Política de Privacidade</a></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+  </html>
+  :root{
+  --bg:#0f1720;--card:#0b1220;--muted:#9aa4b2;--accent:#007BFF;
+  --success:#10B981;--white:#ffffff
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#071025 0%, #0b1220 100%);color:var(--white)}
+.app{max-width:980px;margin:18px auto;padding:14px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:10px 14px}
+.brand h1{margin:0;font-size:20px;letter-spacing:0.5px}
+.brand small{display:block;color:var(--muted);font-size:12px}
+.card{background:rgba(255,255,255,0.03);border-radius:14px;padding:14px;margin:12px 0;box-shadow:0 4px 18px rgba(0,0,0,0.3)}
+.preview .media{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+video{width:320px;height:240px;background:#000;border-radius:8px;object-fit:cover}
+.controls{margin-top:10px}
+.row{display:flex;gap:8px;align-items:center;margin:8px 0}
+.row label{min-width:90px;color:var(--muted);font-size:14px}
+input,select{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--white)}
+.btn{padding:12px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+.primary{background:var(--accent);color:#fff}
+.success{background:var(--success);color:#042018}
+.pay{background:#ffd166;color:#042018}
+.buttons{justify-content:space-between}
+.info{display:flex;justify-content:space-between;padding:8px 0;color:var(--muted)}
+.plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.plan{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))}
+.plan h3{margin:0}
+.plan.popular{border:2px solid rgba(0,123,255,0.18);box-shadow:0 8px 24px rgba(0,123,255,0.06)}
+.footer{text-align:center;color:var(--muted);font-size:13px;padding:16px}
+@media(max-width:600px){video{width:100%;height:200px}}
+// app.js - GlobalVoice (frontend demo)
+// Funcionalidade: preview de audio/video, contador 5 minutos grátis client-side,
+// UI para PayPal, lista de países e tradução básica UI.
+// NOTA: Para chamadas reais (PSTN) integra backend + VoIP provider (Twilio/Plivo/Telnyx).
+
+const localVideo = document.getElementById('localVideo');
+const remoteVideo = document.getElementById('remoteVideo');
+const startPreviewBtn = document.getElementById('startPreview');
+const startCallBtn = document.getElementById('startCall');
+const freeTimerEl = document.getElementById('freeTimer');
+const statusEl = document.getElementById('status');
+const countrySelect = document.getElementById('countrySelect');
+const countrySearch = document.getElementById('countrySearch');
+const phoneInput = document.getElementById('phoneInput');
+const langSelect = document.getElementById('langSelect');
+
+let localStream = null;
+let freeSeconds = 300; // 5 minutos
+let freeInterval = null;
+const FREE_KEY = 'gv_free_seconds_v1';
+
+// Lista extensa de países (podes adicionar mais se quiseres)
+const COUNTRIES = [
+  {name:"Afghanistan", code:"+93"}, {name:"Albania", code:"+355"},{name:"Algeria", code:"+213"},
+  {name:"Angola", code:"+244"},{name:"Argentina", code:"+54"},{name:"Armenia", code:"+374"},
+  {name:"Australia", code:"+61"},{name:"Austria", code:"+43"},{name:"Azerbaijan", code:"+994"},
+  {name:"Bahamas", code:"+1-242"},{name:"Bahrain", code:"+973"},{name:"Bangladesh", code:"+880"},
+  {name:"Belgium", code:"+32"},{name:"Belize", code:"+501"},{name:"Benin", code:"+229"},
+  {name:"Brazil", code:"+55"},{name:"Canada", code:"+1"},{name:"China", code:"+86"},
+  {name:"Colombia", code:"+57"},{name:"Congo (DRC)", code:"+243"},{name:"Egypt", code:"+20"},
+  {name:"France", code:"+33"},{name:"Germany", code:"+49"},{name:"Ghana", code:"+233"},
+  {name:"India", code:"+91"},{name:"Indonesia", code:"+62"},{name:"Ireland", code:"+353"},
+  {name:"Italy", code:"+39"},{name:"Japan", code:"+81"},{name:"Kenya", code:"+254"},
+  {name:"Mexico", code:"+52"},{name:"Morocco", code:"+212"},{name:"Mozambique", code:"+258"},
+  {name:"Netherlands", code:"+31"},{name:"Nigeria", code:"+234"},{name:"Portugal", code:"+351"},
+  {name:"Russia", code:"+7"},{name:"Saudi Arabia", code:"+966"},{name:"South Africa", code:"+27"},
+  {name:"Spain", code:"+34"},{name:"Sweden", code:"+46"},{name:"Switzerland", code:"+41"},
+  {name:"United Kingdom", code:"+44"},{name:"United States", code:"+1"},{name:"Angola", code:"+244"},
+  // adiciona outros países que precisares...
+];
+
+// Load/save free time
+function loadFree() {
+  const saved = parseInt(localStorage.getItem(FREE_KEY));
+  if (!isNaN(saved)) freeSeconds = saved;
+}
+function saveFree() { localStorage.setItem(FREE_KEY, freeSeconds); }
+
+function updateTimerUI() {
+  const m = Math.floor(freeSeconds/60).toString().padStart(1,'0');
+  const s = (freeSeconds%60).toString().padStart(2,'0');
+  freeTimerEl.textContent = `${m}:${s} grátis`;
+  if (freeSeconds <= 0) {
+    freeTimerEl.textContent = `Tempo grátis esgotado`;
+    stopFreeTimer();
+    statusEl.textContent = 'Tempo grátis acabado. Compra um plano para continuar.';
+    startCallBtn.disabled = true;
+  }
+}
+function startFreeTimer() {
+  if (freeInterval) return;
+  freeInterval = setInterval(()=>{
+    freeSeconds = Math.max(0, freeSeconds-1);
+    saveFree();
+    updateTimerUI();
+    if (freeSeconds <= 0) clearInterval(freeInterval);
+  },1000);
+}
+function stopFreeTimer() {
+  if (freeInterval) { clearInterval(freeInterval); freeInterval = null; }
+}
+
+// Populate countries
+function buildCountries(list){
+  countrySelect.innerHTML = '';
+  list.forEach(c=>{
+    const opt = document.createElement('option');
+    opt.value = c.code;
+    opt.textContent = `${c.name} (${c.code})`;
+    countrySelect.appendChild(opt);
+  });
+}
+buildCountries(COUNTRIES);
+
+countrySearch.addEventListener('input', ()=>{
+  const q = countrySearch.value.toLowerCase();
+  buildCountries(COUNTRIES.filter(c=> c.name.toLowerCase().includes(q) || c.code.includes(q)));
+});
+
+// Language UI (simple)
+const TEXTS = {
+  pt: {startPreview:'Iniciar Pré-visualização', startCall:'Iniciar Chamada (Áudio / Vídeo)', ready:'Pronto', previewing:'Pré-visualizando', calling:'Chamando...'},
+  en: {startPreview:'Start Preview', startCall:'Start Call (Audio / Video)', ready:'Ready', previewing:'Previewing', calling:'Calling...'},
+  es: {startPreview:'Iniciar Vista Previa', startCall:'Iniciar Llamada (Audio/Video)', ready:'Listo', previewing:'Vista previa', calling:'Llamando...'},
+  fr: {startPreview:'Démarrer Prévisualisation', startCall:'Démarrer Appel (Audio/Vidéo)', ready:'Prêt', previewing:'Prévisualisation', calling:'Appel...'}
+};
+function applyLang(lang){
+  const t = TEXTS[lang] || TEXTS['en'];
+  startPreviewBtn.textContent = t.startPreview;
+  startCallBtn.textContent = t.startCall;
+  statusEl.textContent = t.ready;
+}
+langSelect.addEventListener('change', ()=>applyLang(langSelect.value));
+applyLang(navigator.language.startsWith('pt') ? 'pt' : (navigator.language.startsWith('es') ? 'es' : 'en'));
+
+// Start local preview
+startPreviewBtn.addEventListener('click', async ()=>{
+  try{
+    if (localStream) {
+      localStream.getTracks().forEach(t=>t.stop());
+      localStream = null;
+      localVideo.srcObject = null;
+      startPreviewBtn.textContent = TEXTS[langSelect.value].startPreview;
+      statusEl.textContent = 'Parado';
+      return;
+    }
+    const s = await navigator.mediaDevices.getUserMedia({video:true,audio:true});
+    localStream = s;
+    localVideo.srcObject = s;
+    statusEl.textContent = TEXTS[langSelect.value].previewing;
+    startPreviewBtn.textContent = 'Parar Pré-visualização';
+  }catch(e){
+    alert('Erro a aceder à câmara/microfone: ' + (e.message || e));
+  }
+});
+
+// Start call (frontend demo)
+startCallBtn.addEventListener('click', async ()=>{
+  if (!localStream) {
+    try {
+      localStream = await navigator.mediaDevices.getUserMedia({video:true,audio:true});
+      localVideo.srcObject = localStream;
+    } catch(e){
+      alert('Permite a câmara/microfone para iniciar a chamada.');
+      return;
+    }
+  }
+
+  if (freeSeconds <= 0) {
+    alert('Seu tempo grátis acabou. Compra um plano para continuar.');
+    return;
+  }
+
+  statusEl.textContent = TEXTS[langSelect.value].calling;
+  startCallBtn.disabled = true;
+
+  // start free timer countdown
+  startFreeTimer();
+
+  // DEMO: mirror local stream to remote for preview effect
+  try {
+    remoteVideo.srcObject = localStream;
+  } catch(e){
+    console.warn(e);
+  }
+
+  // In real implementation: aqui fazes a sinalização WebRTC -> backend -> provider PSTN
+});
+
+// Load saved free time and start timer
+loadFree();
+updateTimerUI();
+if (freeSeconds > 0) startFreeTimer();
+
+// Nota final nas comments: para chamadas reais implementa backend que:
+// - gere tokens (Twilio, Telnyx, Plivo), ponte WebRTC->PSTN, IPN do PayPal para crédito automático e lógica anti-abuso.
